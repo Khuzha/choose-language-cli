@@ -9,6 +9,12 @@ export class Result {
 
   private async print() {
     await printProgress();
-    this.log(chalk.red(`Ваш язык - ${chalk.underline(this.language.name)}`));
+    this.log(chalk.green(`Ваш язык - ${chalk.bgGreen(this.language.name)}`));
+    this.log(
+      chalk(`${chalk.underline('Описание')}: ${this.language.description}`),
+    );
+    this.log(
+      chalk(`${chalk.underline('Курсы')}: ${this.language.links.join(', ')}`),
+    );
   }
 }

@@ -5,7 +5,7 @@ export const printProgress = (total = 10, width = 21) => {
   return new Promise((resolve) => {
     let ticks = 0;
 
-    console.log(chalk.green('Вычсиляем наиболее подходящий Вам язык...'));
+    console.log(chalk.gray('Вычсиляем наиболее подходящий Вам язык...'));
 
     const bar = new ProgressBar(':bar осталось: :counter', {
       total,
