@@ -1,4 +1,3 @@
-import * as prompts from 'prompts';
 import { Result } from './Result';
 import { SelectPrompt } from './SelectPrompt';
 import { languages } from './data';
@@ -15,7 +14,7 @@ const askReason = async () => {
       { title: 'Повеселиться', value: 'fun' },
     ],
   );
-  return prompts(question.getArray());
+  return question.ask();
 };
 
 const askChildAge = async () => {
@@ -23,7 +22,7 @@ const askChildAge = async () => {
     { title: 'Менее 10 лет', value: 'less' },
     { title: '10 и более лет', value: 'more' },
   ]);
-  return prompts(question.getArray());
+  return question.ask();
 };
 
 const runForChild = async () => {

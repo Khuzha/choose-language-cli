@@ -6,7 +6,7 @@ export class SelectPrompt {
     private readonly choices: prompts.Choice[],
   ) {}
 
-  getArray(): Array<prompts.PromptObject<string>> {
+  private getArray(): Array<prompts.PromptObject<string>> {
     return [
       {
         type: 'select',
@@ -15,5 +15,9 @@ export class SelectPrompt {
         choices: this.choices,
       },
     ];
+  }
+
+  async ask() {
+    return prompts(this.getArray());
   }
 }
